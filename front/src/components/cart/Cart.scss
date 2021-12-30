@@ -1,0 +1,112 @@
+.cart {
+  width: 350px;
+  min-height: 200px;
+  padding: 20px 20px 0 20px;
+  background: #eceff1;
+  border: 1px solid #d8dfe3;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #455a64;
+  font-size: 14px;
+  font-weight: 600;
+
+  &__textShopping {
+    font-weight: 400 !important;
+  }
+  &__textSend {
+    font-size: 18px;
+    color: #000000 !important;
+  }
+  &__item {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    &-info {
+      padding: 0 10px;
+      width: 100%;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      &-deleted {
+        position: relative;
+        top: 20px;
+        font-size: 30px;
+      }
+      &-quantity {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+
+        &__more {
+          cursor: pointer;
+          background: #fff;
+          color: #9a9a9a;
+          transition: 0.3s all;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          font-size: 26px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      &__price {
+        font-size: 18px;
+        font-weight: 600;
+        color: #fa8b0f;
+        margin: 5px 0;
+      }
+    }
+  }
+  &__subtotal {
+    color: #455a64;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    &-numb {
+      color: #fa8b0f;
+      font-size: 19px;
+    }
+  }
+  &__pedidoBtn {
+    margin: 20px 0 5px 0;
+    background: #323232;
+    border: 1px solid #323232;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    padding: 0;
+    width: 100%;
+    font-size: 16px;
+    height: 50px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: 0.3s all;
+    &:hover {
+      transition: 0.3s;
+      border: 1px solid #323232;
+      color: #323232;
+      background: none;
+    }
+  }
+}
+
+.cart-content {
+  width: 100%;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #c2c2c2;
+}
+.text-btn {
+  color: #000000 !important;
+  font-weight: 400;
+  user-select: none;
+}

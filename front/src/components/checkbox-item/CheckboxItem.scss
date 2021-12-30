@@ -1,0 +1,17 @@
+.checkboxItem {
+  display: flex;
+  width: 147px;
+  &__label {
+    font-size: 14px;
+    color: #455a64;
+    user-select: none;
+    &:hover {
+      color: #43ac7a;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  }
+}
+
+
+

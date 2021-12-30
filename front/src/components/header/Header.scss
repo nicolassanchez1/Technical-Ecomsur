@@ -1,0 +1,87 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 20px 10px;
+  &__navigation {
+    display: flex;
+    gap: 20px;
+    &-item {
+      display: flex;
+      align-items: center;
+      &__text {
+        font-size: 16px;
+        color: #323232;
+        font-weight: 600;
+      }
+      &__select {
+        position: relative;
+        top: 3px;
+        right: 5px;
+      }
+    }
+  }
+  &__information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    &-store {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      &__text {
+        font-size: 14px;
+        color: #78909c;
+        font-weight: 500;
+      }
+    }
+    &-user {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      &__icon {
+        font-size: 32px;
+        color: #78909c;
+      }
+    }
+  }
+}
+.cart__content {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  z-index: 100;
+}
+
+.breadcrumbs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  &__text {
+    font-size: 14px;
+    color: #455a64;
+  }
+  &__icon {
+    font-size: 30px;
+    color: #c5c5c5;
+    margin: 0 5px;
+  }
+}
+
+.ball {
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #43ac7a;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  &__numb {
+    color: white;
+    font-size: 12px;
+  }
+}
