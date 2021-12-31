@@ -4,23 +4,14 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { URL_IMAGES } from "../../constants/Api";
 import { setCart } from "../../redux/actions/cart";
+import { addUnits, getTotal } from "../../utils/cart";
+import { Link } from "react-router-dom";
 import "./Cart.scss";
-import { addUnits } from "../../utils/cart";
 
 const Cart = () => {
   const { cart } = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
-
-  const getTotal = (products) => {
-    const total = products
-      .reduce(
-        (total, product) => (total += product.price * product.quantity),
-        0
-      )
-      .toFixed(3);
-    return total;
-  };
 
   const deleteItem = (product) => {
     Swal.fire({
@@ -51,6 +42,8 @@ const Cart = () => {
     dispatch(setCart(newData));
   };
 
+  
+
   return (
     <>
       <div className="cart">
@@ -63,7 +56,7 @@ const Cart = () => {
                   <div className="cart__item-info">
                     <span>{item.name}</span>
                     <span className="cart__item-info__price">
-                      ${item.price}
+                      {`$${item.price}`}
                     </span>
                     <div className="cart__item-info-quantity">
                       <div className="cart__item-info-quantity btn">
@@ -75,7 +68,7 @@ const Cart = () => {
                         </div>
                         <span className="text-btn">{item.quantity}</span>
                         <div
-                          className="cart__item-info-quantity__more"
+                          className={`cart__item-info-quantity__more`}
                           onClick={() =>
                             dispatch(setCart(addUnits(cart, item)))
                           }
@@ -95,10 +88,18 @@ const Cart = () => {
               </div>
             ))}
             <p className="cart__subtotal">
-              Subtotal:
-              <span className="cart__subtotal-numb"> ${getTotal(cart)}</span>
+              Subtotal: &nbsp;
+              <span className="cart__subtotal-numb">
+                {`$${getTotal(cart)}`}
+              </span>
             </p>
-            <button className="cart__pedidoBtn">Realizar Pedido</button>
+            <Link
+              to="/checkout"
+              className="link"
+              // onClick={() => window.reload()}
+            >
+              <button className="cart__pedidoBtn">Realizar Pedido</button>
+            </Link>
           </>
         ) : (
           <p className="cart__texts">

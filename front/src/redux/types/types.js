@@ -1,4 +1,6 @@
 export const types = {
     SET_PRODUCTS : 'SET_PRODUCTS',
-    SET_CART : 'SET_CART'
+    SET_PRODUCT : 'SET_PRODUCT',
+    SET_CART : 'SET_CART',
+    SET_CHECKED_ITEMS : 'SET_CHECKED_ITEMS'
 };

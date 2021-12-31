@@ -36,10 +36,16 @@
     color: #323232;
     cursor: pointer;
   }
+
   &__price{
       font-size: 20px;
       font-weight: 500;
       color: #FA8B0F;
       margin-bottom: 30px;
+  }
+
+  .rating-star{
+    cursor: pointer;
+    color: #efb810;
   }
 }

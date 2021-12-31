@@ -1,2 +1,2 @@
-export const URL = 'http://localhost:5000/api/products';
-export const URL_IMAGES = 'http://localhost:5000';
+export const URL = 'https://ecomsur.herokuapp.com/api/products';
+export const URL_IMAGES = 'https://ecomsur.herokuapp.com';

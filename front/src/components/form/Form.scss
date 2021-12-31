@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  &__input {
+      margin: 10px 0;
+    width: 49%;
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid #dbdbdb;
+    color: #455a64;
+    font-size: 14px;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+  }
+}

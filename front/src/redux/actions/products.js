@@ -7,6 +7,16 @@ export const setProducts = (product) => ({
   payload: product,
 });
 
+export const setProduct = (product) => ({
+  type: types.SET_PRODUCT,
+  payload: product,
+});
+
+export const setCheckedItems = (items) => ({
+  type: types.SET_CHECKED_ITEMS,
+  payload: items,
+});
+
 export const getProducts = () => {
   return async (dispatch) => {
     try {

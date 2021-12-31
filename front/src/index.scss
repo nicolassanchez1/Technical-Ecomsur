@@ -18,6 +18,30 @@ code {
   cursor: pointer;
 }
 
+.bold {
+  font-weight: 600;
+}
+
+.grey {
+  color: #323232;
+}
+
+.grey-2 {
+  color: #455a64;
+}
+
 .relative {
   position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+.ligth{
+  font-weight: 300;
+}
+
+.min{
+  width: 60%;
 }

@@ -1,33 +1,24 @@
 import React from "react";
-import { store,persistor } from "./redux/store/store";
+import { store, persistor } from "./redux/store/store";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/header/Header";
 import ProductList from "./components/product-list/ProductList";
-import { PersistGate } from "redux-persist/integration/react";
+import ProductDescription from "./pages/product-description/ProductDescription";
+import Checkout from "./pages/checkout/Checkout";
 
 const App = () => {
-  // -------------------------------------------------
-  // DO NOT USE THE CODE BELOW FROM LINES 8 TO 18. THIS IS
-  // HERE TO MAKE SURE THAT THE EXPRESS SERVER IS RUNNING
-  // CORRECTLY. DELETE CODE WHEN COMPLETING YOUR TEST.
-  // const [response, setResponse] = useState("");
-
-  // // // call server to see if its running
-  // useEffect(() => {
-  //   const getApiResponse = () => {
-  //     fetch("http://localhost:5000/")
-  //       .then((res) => res.text())
-  //       .then((res) => setResponse(res));
-  //   };
-  //   getApiResponse();
-  // }, []);
-  // -------------------------------------------------
-
+  const { pathname } = useLocation();
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Header />
-        <ProductList />
+        {pathname !== "/checkout" && <Header />}
+        <Routes>
+          <Route path="/" element={<ProductList />} />
+          <Route path="/product/:id" element={<ProductDescription />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
       </PersistGate>
     </Provider>
   );
