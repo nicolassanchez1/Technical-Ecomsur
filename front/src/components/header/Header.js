@@ -19,7 +19,9 @@ const Header = () => {
   return (
     <>
       <header className="header">
+
         <div className="header__logo">
+            <i className='bx bx-menu header__logo-bar' />
           <Link to="/">
             <img src="../../../assets/img/logo.svg" alt="logo" />
           </Link>

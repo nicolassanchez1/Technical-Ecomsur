@@ -17,7 +17,7 @@ const ProductDescription = () => {
   return (
     <div className="product">
       <div className="product__img">
-        <img src={`${URL_IMAGES}${image}`} alt={image} width={900} />
+        <img className="product__img-img" src={`${URL_IMAGES}${image}`} alt={image} width={900} />
       </div>
       <div className="product__description">
         <span className="product__description-name">{name}</span>

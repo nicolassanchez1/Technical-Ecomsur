@@ -1,10 +1,17 @@
 .checkout {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  @media screen and (max-width: 770px) {
+    justify-content: center;
+  }
   &__form {
     width: 50%;
     padding: 30px;
-
+    @media screen and (max-width: 770px) {
+      width: 90%;
+      padding: 20px;
+    }
     &-logo {
       display: flex;
       justify-content: center;
@@ -14,18 +21,25 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
       margin: 10px auto 40px auto;
       width: 90%;
       height: 40px;
       border-radius: 10px;
       background: #eceff1;
       border: 1px solid #d8dfe3;
+      @media screen and (max-width: 770px) {
+        width: 100%;
+      }
     }
   }
   &__products {
     width: 50%;
     padding: 30px;
     background: #eceff1;
+    @media screen and (max-width: 770px) {
+      width: 100%;
+    }
     &-information {
       border-bottom: 1px solid #c8c6c6;
       width: 100%;
@@ -71,9 +85,9 @@
   }
 }
 
-.total{
+.total {
   font-size: 22px;
 }
-.total-num{
+.total-num {
   font-size: 20px;
 }

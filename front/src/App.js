@@ -10,6 +10,7 @@ import Checkout from "./pages/checkout/Checkout";
 
 const App = () => {
   const { pathname } = useLocation();
+
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

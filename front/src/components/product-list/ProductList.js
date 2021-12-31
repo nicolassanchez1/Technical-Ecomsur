@@ -10,12 +10,14 @@ import "./ProductList.scss";
 const ProductList = () => {
   const dispatch = useDispatch();
   const { products, checkedItems } = useSelector((state) => state.products);
-  const [data, setData] = useState(products);
+  const [data, setData] = useState([]);
   const [option, setOption] = useState("");
 
   useEffect(() => {
     dispatch(getProducts());
   }, []);
+
+  useEffect(() => setData(products), [products]);
 
   useEffect(() => {
     setData(getDataFiltered().length ? getDataFiltered() : products);
@@ -84,6 +86,10 @@ const ProductList = () => {
 
       <div className="product-list__cart">
         <div className="product-list__cart-filter">
+          <select className="product-list__cart-filter__select mobile-btn pointer">
+            <option value="all">Filtros</option>
+          </select>
+
           <span className="product-list__cart-filter__text">
             {data.length} Artículo{`${data.length > 1 ? "s" : ""}`}
           </span>
@@ -98,7 +104,7 @@ const ProductList = () => {
           </select>
         </div>
         <div className="product-list__cart-content">
-          {data.map((item) => (
+          {data?.map((item) => (
             <ProductCard key={item._id} item={item} />
           ))}
         </div>
